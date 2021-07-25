@@ -1,6 +1,19 @@
 .container {
     width: 55%;
     margin: auto;
+    padding-bottom: 5%;
+}
+
+.badge {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.badge button {
+    margin: auto;
+    width: 100%;
 }
 
 .content {
@@ -31,3 +44,5 @@ p {
 .actions button {
     margin: .5rem;
 }
+
+

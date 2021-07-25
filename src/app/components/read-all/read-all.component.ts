@@ -9,6 +9,8 @@ import { LivroService } from 'src/app/services/livro.service';
 })
 export class ReadAllComponent implements OnInit {
 
+  closed = 0;
+
   list: Livro[] = [];
 
   constructor(private  service: LivroService) { }
@@ -20,7 +22,16 @@ export class ReadAllComponent implements OnInit {
   findAll(): void {
     this.service.findAll().subscribe((resposta) => {
       this.list = resposta;
+      this.countClosed();
     })
+  }
+
+  countClosed(): void {
+    for(let livro of this.list) {
+      if(livro.finalizado) {
+        this.closed++;
+      }
+    }
   }
 
 }
