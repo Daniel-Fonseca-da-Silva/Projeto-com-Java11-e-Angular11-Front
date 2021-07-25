@@ -1,6 +1,6 @@
 export interface Livro {
 
-    // Atributos
+    // Atributos (? opcional!)
     id?: String,
     titulo: String,
     descricao?: String,
