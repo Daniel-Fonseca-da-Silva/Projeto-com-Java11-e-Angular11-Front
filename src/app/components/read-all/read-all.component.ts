@@ -12,6 +12,7 @@ export class ReadAllComponent implements OnInit {
   closed = 0;
 
   list: Livro[] = [];
+  listFinished: Livro[] = [];
 
   constructor(private  service: LivroService) { }
 
@@ -21,17 +22,15 @@ export class ReadAllComponent implements OnInit {
 
   findAll(): void {
     this.service.findAll().subscribe((resposta) => {
-      this.list = resposta;
-      this.countClosed();
+      resposta.forEach(livro => {
+        if(livro.finalizado) {
+          this.listFinished.push(livro);
+        } else {
+          this.list.push(livro);
+        }
+      })
+      this.closed = this.listFinished.length
     })
-  }
-
-  countClosed(): void {
-    for(let livro of this.list) {
-      if(livro.finalizado) {
-        this.closed++;
-      }
-    }
   }
 
 }
