@@ -14,6 +14,8 @@
 .badge button {
     margin: auto;
     width: 100%;
+    background-color: rgb(113, 47, 172);
+    color: white;
 }
 
 .content {

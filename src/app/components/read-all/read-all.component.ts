@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Livro } from 'src/app/models/livro';
 import { LivroService } from 'src/app/services/livro.service';
 
@@ -14,7 +15,7 @@ export class ReadAllComponent implements OnInit {
   list: Livro[] = [];
   listFinished: Livro[] = [];
 
-  constructor(private  service: LivroService) { }
+  constructor(private  service: LivroService, private router: Router) { }
 
   ngOnInit(): void {
     this.findAll();
@@ -40,6 +41,10 @@ export class ReadAllComponent implements OnInit {
         this.list = this.list.filter(livro => livro.id !== id);
       }
     })
+  }
+
+  navegarParaFinalizados(): void {
+    this.router.navigate(['finalizados']);
   }
 
 }
