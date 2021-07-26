@@ -28,6 +28,10 @@ export class LivroService {
     return this.http.delete<void>(url);
   }
 
+  create(livro: Livro):Observable<Livro> {
+    return this.http.post<Livro>(this.baseUrl, livro);
+  }
+
   message(msg: String): void {
     this.snack.open(`${msg}`, 'OK', {
       horizontalPosition: 'end',
