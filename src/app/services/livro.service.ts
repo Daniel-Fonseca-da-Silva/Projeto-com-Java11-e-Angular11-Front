@@ -18,6 +18,11 @@ export class LivroService {
     return this.http.get<Livro[]>(this.baseUrl);
   }
 
+  update(livro: Livro): Observable<Livro> {
+    const url = `${this.baseUrl}/${livro.id}`
+    return this.http.put<Livro>(url, livro);
+  }
+
   delete(id: any):Observable<void> {
     const url = `${this.baseUrl}/${id}`
     return this.http.delete<void>(url);
