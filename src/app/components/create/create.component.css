@@ -1,0 +1,38 @@
+form {
+    width: 85%;
+    margin: 2rem auto 0 auto;
+    text-align: center;
+}
+
+.data-finalizar {
+    text-align: start;
+    background-color: black;   
+}
+
+form mat-label {
+    color: rgb(185, 88, 88);
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 3rem;
+    color: black;
+}
+
+.form {
+    width: 100%;
+}
+
+.buttons {
+    width: 100%;
+
+}
+
+button {
+    margin-right: .5rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
+}
+
+
