@@ -2,7 +2,7 @@
     <div class="badge mat-elevation-z8">
         <button (click)="navegarParaFinalizados()" mat-stroked-button color="primary" matBadge = "{{ closed }}">TASKS FINALIZADAS</button>
     </div>
-    <button class="novo-item mat-elevation-z8" mat-raised-button color="primary">NOVO</button>
+    <button [routerLink]="['create']" routerLinkActive="router-link-active"  class="novo-item mat-elevation-z8" mat-raised-button color="primary">NOVO</button>
 
     <div class="content" *ngFor="let item of list">
         <mat-card class="mat-elevation-z8">
